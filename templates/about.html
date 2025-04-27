@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock title %}
+{% block style %}
+<style>
+  /* Remove default focus blue outline and box shadow */
+  .accordion-button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Always use black background and white text when focused or active */
+  .accordion-button:focus,
+  .accordion-button:not(.collapsed) {
+    background-color: black !important;
+    color: white !important;
+  }
+
+  /* Arrow color fix for black background */
+  .accordion-button::after {
+    filter: invert(1);
+    /* Makes the arrow icon white */
+  }
+
+  /* Optional: For dark mode only */
+  @media (prefers-color-scheme: dark) {
+
+    .accordion-button:focus,
+    .accordion-button:not(.collapsed) {
+      background-color: black !important;
+      color: white !important;
+    }
+
+    .accordion-button::after {
+      filter: invert(1);
+    }
+  }
+</style>
+{% endblock style %}
+{% block body %}
+<div class="container my-3"> <!--can use conatiner-fluid for taking full width-->
+  <h1>Introducing Our ToDo Web App</h1>
+  <br>
+  <p class="fs-5">Welcome to our To-Do List app, designed to help you stay organized and on top of your tasks with ease!
+    Whether you're juggling work, personal projects, or everyday chores, our app provides a simple and intuitive way to
+    manage your to-dos and boost your productivity.</p>
+
+</div>
+<div class="container my-3">
+  <h2>Key Features</h2>
+  <br>
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <b>Add Tasks</b>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          <strong>Firstly - </strong> Quickly add new tasks to your list, so you never forget an important deadline or
+          goal.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+          <b>Delete Tasks</b>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <strong>Task Completed!</strong> Once a task is completed, easily delete it from your list to keep things neat
+          and tidy.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed btn btn-dark" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseThree">
+          <b>Update Tasks</b>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <strong>OOps wrong task added, No worries!</strong> Need to make changes? You can edit your existing tasks to
+          reflect any updates or adjustments.
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <p class="fs-5">With a clean, user-friendly interface, our app makes it simple to prioritize your tasks, track
+    progress, and stay on schedule. No more sticky notes or scattered reminders—everything you need is just a few taps
+    away.
+  </p>
+</div>
+<div class="container my-3"> <!--can use conatiner-fluid for taking full width-->
+  <h1>Why Choose Us?</h1>
+  <br>
+  <p class="fs-5">We believe that productivity starts with the right tools. Our To-Do List app gives you the flexibility
+    to manage tasks your way, whether you’re handling a busy workday or organizing personal goals. Plus, it’s completely
+    free, with no ads or distractions!
+    <br>
+    Start getting things done—download our app today and experience the difference!
+  </p>
+</div>
+{% endblock body %}
